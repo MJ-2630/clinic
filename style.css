@@ -192,7 +192,7 @@ button,input,select {
     position:relative;
     min-height:680px;
     overflow:hidden;
-    background:var(--deep-teal);
+    background:#0aaf99;
 }
 .hero-slider {
     position:relative;
