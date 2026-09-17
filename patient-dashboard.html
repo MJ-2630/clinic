@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard | NalamCare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<main class="patient-dashboard">
+
+    <section class="dashboard-header">
+        <div class="dashboard-welcome">
+            <span class="dashboard-tag">PATIENT DASHBOARD</span>
+            <h1>Welcome back, <strong>Jeba!</strong> 👋</h1>
+            <p>Here’s a quick overview of your healthcare activity.</p>
+        </div>
+        <div class="dashboard-profile">
+            <div class="profile-avatar">JS</div>
+            <div>
+                <h3>Jeba SubikSha</h3>
+                <span>Patient</span>
+            </div>
+            <button class="profile-menu"><i class="bi bi-three-dots-vertical"></i></button>
+        </div>
+    </section>
+
+    <section class="dashboard-grid">
+
+        <div class="dashboard-card appointment-card">
+            <div class="card-top">
+                <div>
+                    <span class="card-label">NEXT APPOINTMENT</span>
+                    <h2>General Consultation</h2>
+                </div>
+                <div class="card-icon"><i class="bi bi-calendar2-check"></i></div>
+            </div>
+            <div class="appointment-details">
+                <div><i class="bi bi-person-circle"></i><span>Dr. Arun Kumar<br><small>General Medicine</small></span></div>
+                <div><i class="bi bi-calendar3"></i><span>24 September 2026<br><small>10:30 AM</small></span></div>
+            </div>
+            <div class="appointment-actions">
+                <a href="booking.html" class="dashboard-btn">View Appointment</a>
+                <button class="icon-btn"><i class="bi bi-three-dots"></i></button>
+            </div>
+        </div>
+
+        <div class="dashboard-card health-card">
+            <div class="card-top">
+                <div>
+                    <span class="card-label">HEALTH SUMMARY</span>
+                    <h2>Your Health</h2>
+                </div>
+                <div class="card-icon"><i class="bi bi-heart-pulse"></i></div>
+            </div>
+            <div class="health-stats">
+                <div><strong>72</strong><span>Heart Rate</span><small>BPM</small></div>
+                <div><strong>120/80</strong><span>Blood Pressure</span><small>mmHg</small></div>
+                <div><strong>98.6°F</strong><span>Temperature</span><small>Normal</small></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="quick-actions-section">
+        <div class="section-heading">
+            <div>
+                <span class="dashboard-tag">QUICK ACTIONS</span>
+                <h2>What would you like to do?</h2>
+            </div>
+        </div>
+        <div class="quick-actions">
+            <a href="booking.html" class="action-card">
+                <div class="action-icon"><i class="bi bi-calendar-plus"></i></div>
+                <div><h3>Book Appointment</h3><p>Schedule a new visit</p></div>
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="doctors.html" class="action-card">
+                <div class="action-icon"><i class="bi bi-person-badge"></i></div>
+                <div><h3>Find a Doctor</h3><p>Explore our specialists</p></div>
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="services.html" class="action-card">
+                <div class="action-icon"><i class="bi bi-grid"></i></div>
+                <div><h3>Our Services</h3><p>View healthcare services</p></div>
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="contact.html" class="action-card">
+                <div class="action-icon"><i class="bi bi-headset"></i></div>
+                <div><h3>Get Support</h3><p>Contact NalamCare</p></div>
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="dashboard-content-grid">
+
+        <div class="dashboard-card recent-card">
+            <div class="card-heading">
+                <div>
+                    <span class="card-label">ACTIVITY</span>
+                    <h2>Recent Appointments</h2>
+                </div>
+                <a href="#">View All</a>
+            </div>
+            <div class="appointment-list">
+                <div class="appointment-row">
+                    <div class="doctor-small-avatar">AK</div>
+                    <div class="appointment-info">
+                        <h3>Dr. Arun Kumar</h3>
+                        <p>General Medicine</p>
+                    </div>
+                    <div class="appointment-date">
+                        <strong>18 Sep</strong>
+                        <span>10:00 AM</span>
+                    </div>
+                    <span class="status completed">Completed</span>
+                </div>
+                <div class="appointment-row">
+                    <div class="doctor-small-avatar">PM</div>
+                    <div class="appointment-info">
+                        <h3>Dr. Priya</h3>
+                        <p>Cardiology</p>
+                    </div>
+                    <div class="appointment-date">
+                        <strong>05 Sep</strong>
+                        <span>11:30 AM</span>
+                    </div>
+                    <span class="status completed">Completed</span>
+                </div>
+                <div class="appointment-row">
+                    <div class="doctor-small-avatar">RM</div>
+                    <div class="appointment-info">
+                        <h3>Dr. Rahul</h3>
+                        <p>Dermatology</p>
+                    </div>
+                    <div class="appointment-date">
+                        <strong>28 Aug</strong>
+                        <span>09:30 AM</span>
+                    </div>
+                    <span class="status cancelled">Cancelled</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-card prescription-card">
+            <div class="card-heading">
+                <div>
+                    <span class="card-label">MEDICATION</span>
+                    <h2>Prescriptions</h2>
+                </div>
+                <i class="bi bi-capsule-pill heading-icon"></i>
+            </div>
+            <div class="prescription-item">
+                <div class="medicine-icon"><i class="bi bi-capsule"></i></div>
+                <div>
+                    <h3>Vitamin D3</h3>
+                    <p>Once daily · After breakfast</p>
+                </div>
+            </div>
+            <div class="prescription-item">
+                <div class="medicine-icon"><i class="bi bi-capsule"></i></div>
+                <div>
+                    <h3>Paracetamol</h3>
+                    <p>As prescribed · After food</p>
+                </div>
+            </div>
+            <button class="view-prescriptions">View Prescriptions <i class="bi bi-arrow-right"></i></button>
+        </div>
+
+    </section>
+
+    <section class="dashboard-notification">
+        <div class="notification-icon"><i class="bi bi-bell"></i></div>
+        <div>
+            <span>REMINDER</span>
+            <h3>Your appointment is coming up!</h3>
+            <p>Dr. Arun Kumar · 24 September 2026 at 10:30 AM</p>
+        </div>
+        <a href="booking.html">View Details <i class="bi bi-arrow-right"></i></a>
+    </section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const patientData = localStorage.getItem("user");
+    const role= localStorage.getItem("role");
+
+    if (!patientData || role !=="patient") {
+        window.location.href = "login.html";
+        return;
+    }
+
+    const patient = JSON.parse(patientData);
+
+    const firstName = patient.first_name || "";
+    const fullName = `${patient.first_name || ""} ${patient.last_name || ""}`.trim();
+
+    const welcomeName = document.querySelector(".dashboard-welcome h1 strong");
+    const profileName = document.querySelector(".dashboard-profile h3");
+    const profileAvatar = document.querySelector(".profile-avatar");
+
+    if (welcomeName) {
+        welcomeName.textContent = firstName;
+    }
+
+    if (profileName) {
+        profileName.textContent = fullName;
+    }
+
+    if (profileAvatar) {
+        const firstInitial = patient.first_name?.charAt(0) || "";
+        const lastInitial = patient.last_name?.charAt(0) || "";
+        profileAvatar.textContent = `${firstInitial}${lastInitial}`.toUpperCase();
+    }
+
+    document.querySelector(".profile-menu")?.addEventListener("click", () => {
+        alert(`Logged in as ${fullName}\n${patient.email}`);
+    });
+});
+</script>
+
+</body>
+</html>

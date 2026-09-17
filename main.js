@@ -625,6 +625,30 @@ if (patientAge) {
 /* -----------------------------------------
    CONFIRM APPOINTMENT
 ----------------------------------------- */
+let selectedDoctorId = null;
+
+fetch("/api/doctors")
+    .then(response => response.json())
+    .then(doctors => {
+        document.querySelectorAll(".select-doctor-btn").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const doctorName = button.dataset.doctor;
+
+                const doctor = doctors.find(
+                    d => d.name.trim().toLowerCase() ===doctorName.trim().toLowerCase()
+                );
+
+                if (doctor) {
+                    selectedDoctorId = doctor.id;
+                }
+
+            });
+
+        });
+    })
+    .catch(error => console.error("Doctor loading error:", error));
 
 const bookingTerms =
     document.getElementById("bookingTerms");
@@ -663,9 +687,49 @@ if (confirmButton) {
         }
 
 
-        alert(
-            "Appointment confirmed successfully!"
-        );
+        if (!selectedDoctorId) {
+    alert("Please select a doctor.");
+    return;
+}
+
+const patient = JSON.parse(localStorage.getItem("user"));
+
+const selectedDate =
+    document.querySelector(".calendar-day.active")?.textContent.trim();
+
+const selectedTime =
+    document.querySelector(".time-slot.selected")?.textContent.trim();
+
+const reason =
+    document.getElementById("visitReason").value.trim();
+
+fetch("/api/appointments", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        patient_id: patient.id,
+        doctor_id: selectedDoctorId,
+        appointment_date: `2026-09-${selectedDate.padStart(2, "0")}`,
+        appointment_time: selectedTime,
+        reason: reason
+    })
+})
+.then(response => response.json())
+.then(data => {
+
+    if (data.message === "Appointment booked successfully!") {
+        alert("Appointment confirmed successfully!");
+    } else {
+        alert(data.message || "Appointment booking failed!");
+    }
+
+})
+.catch(error => {
+    console.error(error);
+    alert("Server connection failed!");
+});
 
     });
 
